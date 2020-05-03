@@ -1,3 +1,4 @@
+const os = require('os');
 const fs = require('fs');
 const path = require('path');
 const Calculator = require('./Calculator');
@@ -18,7 +19,7 @@ class Receipt {
 
   parse() {
     this.fileContent = fs.readFileSync(this.file, 'utf-8');
-    this.fileContent = this.fileContent.split(/\n/);
+    this.fileContent = this.fileContent.split(os.EOL);
     this.verify();
     this.transform();
     return this.format();
@@ -32,7 +33,9 @@ class Receipt {
   }
 
   transform() {
-    this.dataSource = this.dataSource.map(each => this.calculator.calc(each));
+    this.dataSource = this.dataSource.map(each =>
+      this.calculator.calc(each.distance, each.time)
+    );
   }
 
   format() {

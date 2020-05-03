@@ -20,3 +20,10 @@ test('file missing case', () => {
     receipt.parse();
   }).toThrow();
 });
+
+test('file null case', () => {
+  const receipt = new Receipt();
+  expect(() => {
+    receipt.parse();
+  }).toThrow();
+});
