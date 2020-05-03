@@ -2,7 +2,7 @@ const Calculator = require('../Calculator');
 
 const calculator = new Calculator();
 test('success cases', () => {
-  expect(calculator.calc({ distance: 1, time: 0 })).toBe(6);
+  expect(calculator.calc(1, 0)).toBe(6);
 });
 
 test('distance expection cases', () => {

@@ -11,9 +11,6 @@ class Receipt {
   }
 
   fixFile(file) {
-    if (!file) {
-      throw new Error('invalid file');
-    }
     this.file = path.join('./src/fixtures', file);
   }
 
