@@ -1,8 +1,8 @@
-import fs from 'fs';
-import path from 'path';
-import Calculator from './Calculator';
+const fs = require('fs');
+const path = require('path');
+const Calculator = require('./Calculator');
 
-export default class Receipt {
+class Receipt {
   constructor(file) {
     this.fixFile(file);
     this.calculator = new Calculator();
@@ -39,3 +39,5 @@ export default class Receipt {
     return this.dataSource.map(each => `收费${each}元`).join('\n');
   }
 }
+
+module.exports = Receipt;

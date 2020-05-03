@@ -1,4 +1,4 @@
-export default class Calculator {
+class Calculator {
   calc(receipt) {
     this.basics = 6;
     if (receipt.distance > 2) {
@@ -10,3 +10,5 @@ export default class Calculator {
     return Math.round(this.basics + receipt.time * 0.25);
   }
 }
+
+module.exports = Calculator;

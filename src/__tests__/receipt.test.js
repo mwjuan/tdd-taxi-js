@@ -1,4 +1,4 @@
-import Receipt from '../Receipt';
+const Receipt = require('../Receipt');
 
 test('empty data case', () => {
   const receipt = new Receipt('emptyData.txt');
